@@ -56,6 +56,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",  # Your frontend origin
     'https://menu-app-production.herokuapp.com'
+    "https://menu-app-production-16a189c11ffb.herokuapp.com",
 ]
 
 ROOT_URLCONF = 'restaurant.urls'
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'restaurant.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600)
+    'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600, ssl_require=True)
 }
 
 
