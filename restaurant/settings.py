@@ -124,6 +124,8 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+CSRF_TRUSTED_ORIGINS = ["https://menu-app-production.herokuapp.com"]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
