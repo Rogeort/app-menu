@@ -80,19 +80,11 @@ WSGI_APPLICATION = 'restaurant.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         conn_max_age=600,
+        conn_health_checks=True,
         ssl_require=True,
-        engine='django.db.backends.postgresql',
-        options={
-            'sslmode': 'require',
-            'sslrootcert': os.path.join(BASE_DIR, 'prod-ca-2021.pem'),
-        }
     )
 }
 
-DATABASES['default']['OPTIONS'] = {
-    'sslmode': 'verify-full',
-    'sslrootcert': os.path.join(BASE_DIR, 'prod-ca-2021.pem'),
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -137,7 +129,7 @@ STATICFILES_DIRS = (
 )
 
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
