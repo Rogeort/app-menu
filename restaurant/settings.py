@@ -55,7 +55,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",  # Your frontend origin
-    'https://menu-app-production.herokuapp.com'
+    'https://menu-app-production.herokuapp.com',
     "https://menu-app-production-16a189c11ffb.herokuapp.com",
 ]
 
