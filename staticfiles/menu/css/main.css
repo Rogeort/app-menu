@@ -1,0 +1,38 @@
+/* Highlight selected dish */
+.product-item.selected {
+    background-color: #f8f9fa;
+    border-left: 4px solid #0d6efd;
+}
+
+/* Quantity controls */
+.qty-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Total display */
+.total-display {
+    text-align: right;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+/* Add button */
+.add {
+    margin-top: 15px;
+    width: 100%;
+    padding: 8px;
+}
+
+/* Add to your main.css */
+.order-success {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.order-success h4 {
+    margin-bottom: 10px;
+}
