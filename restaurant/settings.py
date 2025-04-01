@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,7 +30,6 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic'
     'menu.apps.MenuConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -81,9 +79,6 @@ DATABASES = {
     )
 }
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -126,9 +121,13 @@ MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-TATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+import dj_database_url 
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
