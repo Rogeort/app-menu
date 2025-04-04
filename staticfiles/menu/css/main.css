@@ -36,3 +36,12 @@
 .order-success h4 {
     margin-bottom: 10px;
 }
+
+body{
+    background-image: url('../img/bg.jpg');
+}
+
+.card .table {
+    background-color: var(--bs-table-bg) !important;
+    color: var(--bs-table-color) !important;
+  }

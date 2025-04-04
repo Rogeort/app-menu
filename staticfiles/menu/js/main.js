@@ -81,6 +81,7 @@ class ProductManager {
         });
 
         const detailCard = document.querySelector('.col-md-6 .card');
+
         detailCard.querySelector('.card-title').textContent = dishName;
         detailCard.querySelector('.card-text').textContent = dishDescription;
         
@@ -90,6 +91,9 @@ class ProductManager {
         
         detailCard.querySelector('.text-muted').textContent = propertiesText;
         
+        const img = document.getElementById("img-dish");
+        console.log(item.dataset.url)
+        img.src = item.dataset.url;
         const addButton = detailCard.querySelector('.add');
         addButton.dataset.id = item.dataset.id;
         addButton.dataset.name = dishName;

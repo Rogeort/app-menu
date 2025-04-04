@@ -62,7 +62,6 @@ class Category(models.Model):
             self.display_name = self.get_name_display()
         super().save(*args, **kwargs)
 
-
 class Dish(models.Model):
     """Menu item with multiple description levels and category relationship"""
     name = models.CharField(
@@ -168,8 +167,6 @@ class Dish(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
-
-
 
 class Sale(models.Model):
     product_name = models.CharField(max_length=200)
